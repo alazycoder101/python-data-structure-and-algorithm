@@ -3,7 +3,7 @@ import time
 
 """
 问题描述
-    所谓“变位词”是指两个词之间存在组成字母的重新排列关系
+    所谓“变位词/异序词”是指两个词之间存在组成字母的重新排列关系
     如: heart 和earth, python和typhon
     为了简单起见，假设参与判断的两个词仅由小写字母构成，而且长度相等
 
@@ -13,7 +13,7 @@ import time
 可以很好展示同一问题的不同数量级算法
 """
 
-
+# 清点法
 def anagramSolution1(s1, s2):   # 遍历方法，逐字检查
     alist = list(s2)
     pos1 = 1
@@ -33,7 +33,7 @@ def anagramSolution1(s1, s2):   # 遍历方法，逐字检查
         pos1 += 1
     return StillOk
 
-
+# 排序法
 def anagramSolution2(s1, s2):   # 排序比较
     alist1 = sorted(s1)
     alist2 = sorted(s2)
@@ -47,7 +47,11 @@ def anagramSolution2(s1, s2):   # 排序比较
             matches = False
     return matches
 
+# 蛮力法
+# 穷尽所有的排列可能n!
 
+
+# 计数法
 def anagramSolution3(s1, s2):   # 计数比较
     c1 = [0]*26     # 映射字母到列表中
     c2 = [0]*26
